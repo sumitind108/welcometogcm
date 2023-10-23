@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chart</title>
+</head>
+<body>
+    <form action="{% url 'plot_chart' %}" method="get">
+        <label for="bus_id_input">Enter Bus ID:</label>
+        <input type="text" id="bus_id_input" name="bus_id_input">
+        <button type="submit">Plot Chart</button>
+    </form>
+
+    {% if plot_file_path %}
+        <img src="{{ plot_file_path }}" alt="Chart">
+    {% endif %}
+</body>
+</html>
