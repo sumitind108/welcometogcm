@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - WelcomeToGCM
+name: Build and deploy Python app to Azure Web App - welcometogcm
 
 on:
   push:
@@ -62,6 +62,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'WelcomeToGCM'
+          app-name: 'welcometogcm'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_65DB162B2A5D4FE98547BE0933A6F26E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_70EA9B273CAD4B6D90C35F957D31AF1E }}
