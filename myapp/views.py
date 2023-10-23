@@ -211,3 +211,38 @@ def plot_chart(request):
     }
 
     return render(request, 'myapp/plotchart.html', context)
+
+
+#---------------------------------------------------------------
+
+
+# import os
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# from django.shortcuts import render
+# from django.conf import settings
+
+# def plot_chart(request, bus_id=None):
+#     if bus_id:
+#         data_file_path = os.path.join(settings.BASE_DIR, 'data', 'CAN_DATA.csv')
+#         data = pd.read_csv(data_file_path)
+#         filtered_data = data[(data['vehicleid'] == int(bus_id)) & (data['can_param'] == 'Battery SOC')]
+
+#         if not filtered_data.empty:
+#             fig, ax = plt.subplots(figsize=(10, 6))
+#             ax.plot(filtered_data['can_time'], filtered_data['can_val'])
+#             plot_filename = os.path.join(settings.MEDIA_ROOT, 'plot.png')
+#             plt.savefig(plot_filename)
+#             plt.close()
+
+#             plot_file_path = os.path.join(settings.MEDIA_URL, 'plot.png')
+#         else:
+#             plot_file_path = None
+#     else:
+#         plot_file_path = None
+
+#     context = {
+#         'plot_file_path': plot_file_path
+#     }
+
+#     return render(request, 'myapp/plotchart.html', context)
